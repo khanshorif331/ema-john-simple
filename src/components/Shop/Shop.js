@@ -33,6 +33,7 @@ const Shop = () => {
         let newCart = []
         const exists = cart.find(product=>product.id === selectedProduct.id)
         if(!exists){
+
             selectedProduct.quantity=1
             newCart = [...cart, selectedProduct]
         }
@@ -41,8 +42,7 @@ const Shop = () => {
             exists.quantity = exists.quantity + 1
             newCart = [...rest,exists]
         }
-
-        newCart = [...cart, selectedProduct]
+        
         setCart(newCart)
         addToDb(selectedProduct.id)
     }
