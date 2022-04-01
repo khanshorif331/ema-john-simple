@@ -13,5 +13,7 @@
     margin: 0;
 }
 .review-item-details-container{
+    width: 100%;
     display: flex;
+    justify-content: space-between;
 }
