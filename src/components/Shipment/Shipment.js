@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init'
 import googleLogo from '../../images/google-logo-9824.png'
 
 const Shipment = () => {
+	const [user] = useAuthState(auth)
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [address, setAddress] = useState('')
@@ -13,9 +16,6 @@ const Shipment = () => {
 		setName(event.target.value)
 	}
 
-	const handleEmailBlur = event => {
-		setEmail(event.target.value)
-	}
 	const handleAddressBlur = event => {
 		setAddress(event.target.value)
 	}
@@ -25,8 +25,8 @@ const Shipment = () => {
 
 	const handleCreateUser = event => {
 		event.preventDefault()
-
-		setError('')
+		const shipping = { name, email, address, phone }
+		console.log(shipping)
 	}
 
 	return (
@@ -47,7 +47,8 @@ const Shipment = () => {
 					<div className='input-group'>
 						<label htmlFor='email'>Your Email</label>
 						<input
-							onBlur={handleEmailBlur}
+							value={user?.email}
+							readOnly
 							type='email'
 							name='email'
 							id=''
@@ -65,7 +66,7 @@ const Shipment = () => {
 						/>
 					</div>
 					<div className='input-group'>
-						<label htmlFor=''>Phone Number</label>
+						<label htmlFor='phone'>Phone Number</label>
 						<input
 							onBlur={handlePhoneBlur}
 							type='number'
