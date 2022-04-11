@@ -14,6 +14,10 @@
     font-weight: 400px;
 }
 
+.input-group{
+    margin-bottom: 20px;
+}
+
 .input-group label{
     display: block;
     margin-left: 5px ;
@@ -21,8 +25,54 @@
 
 .input-group input{
     width: 415px;
+    height: 55px;
     border: 1px solid #95A0A7;
     box-sizing: border-box;
     border-radius: 5px;
+    font-size: 24px;
+}
+
+.form-submit{
+    width: 415px;
     height: 55px;
+    background-color: rgba(255, 153, 0, 0.3);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-submit:hover{
+    background-color: rgba(255, 153, 0, 0.5);
+}
+
+.form-link{
+    color: #FF9900;
+    text-decoration: none;
+}
+
+.or-line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.or-line div{
+    width: 40%;
+    background-color: black;
+    height: 1px;
+    margin: 10px;
+}
+.google-btn button{
+    width: 100%;
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-btn button img{
+    width: 30px;
 }
