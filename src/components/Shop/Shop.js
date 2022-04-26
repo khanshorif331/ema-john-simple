@@ -17,7 +17,7 @@ const Shop = () => {
 		fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
 			.then(res => res.json())
 			.then(data => setProducts(data))
-	}, [])
+	}, [page, size])
 
 	useEffect(() => {
 		fetch('http://localhost:5000/productCount')
@@ -87,7 +87,7 @@ const Shop = () => {
 							10
 						</option>
 						<option value='15'>15</option>
-						<option value='15'>20</option>
+						<option value='20'>20</option>
 					</select>
 				</div>
 			</div>
